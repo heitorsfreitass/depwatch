@@ -19,4 +19,6 @@ export default {
     },
 
     plugins: [forms],
+    darkMode: 'class',
+    content: ['./resources/js/**/*.{vue.ts}'],
 };
