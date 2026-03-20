@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+    import GuestLayout from '@/Layouts/GuestLayout.vue'
+    import InputError from '@/Components/InputError.vue'
+    import InputLabel from '@/Components/InputLabel.vue'
+    import PrimaryButton from '@/Components/PrimaryButton.vue'
+    import TextInput from '@/Components/TextInput.vue'
+    import { Head, useForm } from '@inertiajs/vue3'
 
-const form = useForm({
-    password: '',
-});
+    const form = useForm({
+        password: '',
+    })
 
-const submit = () => {
-    form.post(route('password.confirm'), {
-        onFinish: () => {
-            form.reset();
-        },
-    });
-};
+    const submit = () => {
+        form.post(route('password.confirm'), {
+            onFinish: () => {
+                form.reset()
+            },
+        })
+    }
 </script>
 
 <template>
@@ -24,8 +24,8 @@ const submit = () => {
         <Head title="Confirm Password" />
 
         <div class="mb-4 text-sm text-gray-600">
-            This is a secure area of the application. Please confirm your
-            password before continuing.
+            This is a secure area of the application. Please confirm your password before
+            continuing.
         </div>
 
         <form @submit.prevent="submit">
@@ -33,9 +33,9 @@ const submit = () => {
                 <InputLabel for="password" value="Password" />
                 <TextInput
                     id="password"
+                    v-model="form.password"
                     type="password"
                     class="mt-1 block w-full"
-                    v-model="form.password"
                     required
                     autocomplete="current-password"
                     autofocus
