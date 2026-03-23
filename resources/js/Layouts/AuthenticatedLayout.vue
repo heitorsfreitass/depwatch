@@ -5,6 +5,7 @@
     import DropdownLink from '@/Components/DropdownLink.vue'
     import NavLink from '@/Components/NavLink.vue'
     import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue'
+    import ThemeToggle from '@/Components/ThemeToggle.vue'
     import { Link } from '@inertiajs/vue3'
 
     const showingNavigationDropdown = ref(false)
@@ -39,6 +40,8 @@
                         </div>
 
                         <div class="hidden sm:ms-6 sm:flex sm:items-center">
+                            <ThemeToggle />
+
                             <!-- Settings Dropdown -->
                             <div class="relative ms-3">
                                 <Dropdown align="right" width="48">

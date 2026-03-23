@@ -20,10 +20,6 @@ export interface SharedProps {
     theme: Theme
 }
 
-export function useSharedProps() {
-    return usePage<SharedProps>().props
-}
-
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel'
 
 createInertiaApp({
